@@ -192,7 +192,7 @@ jobs:
         env:
           JF_USER: ${{ secrets.JF_USER }}
           JF_PASSWORD: ${{ secrets.JF_PASSWORD }}
-          JF_URL: https://netfoundry.jfrog.io/artifactory/
+          JF_ARTIFACTORY_URL: https://netfoundry.jfrog.io/artifactory/
       - name: Upload DEB to Artifactory with jFrog CLI
         if: ${{ matrix.pkg_type == 'deb' }}
         env:
