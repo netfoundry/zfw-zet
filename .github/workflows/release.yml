@@ -201,6 +201,5 @@ jobs:
         run: |
             asset=$(gh api /repos/netfoundry/zfw-zet/releases --jq '( last ((.[].assets | sort_by(.created_at)).[] | select(.name | endswith("${{ needs.build_amd64_release.outputs.version }}_${{ matrix.goarch }}.${{ matrix.pkg_type }}"))))')
             curl -Ls  "$(jq -r .browser_download_url <<< "$asset")" -H "Accept: application/vnd.github.v3+json" --output ./"$(jq -r .name <<< "$asset")"
-            jf rt upload ./${{ env.APP_NAME }}_${{ needs.build_amd64_release.outputs.version }}_${{ matrix.goarch }}.${{ matrix.pkg_type }} /
-                netfoundry-deb-stable/pool/${{ env.APP_NAME }}/${{ matrix.distro_name }}/${{ matrix.goarch }}/ --deb=${{ matrix.distro_name }}/main/${{ matrix.goarch }} --recursive=false --flat=true
+            jf rt upload ./${{ env.APP_NAME }}_${{ needs.build_amd64_release.outputs.version }}_${{ matrix.goarch }}.${{ matrix.pkg_type }} netfoundry-deb-stable/pool/${{ env.APP_NAME }}/${{ matrix.distro_name }}/${{ matrix.goarch }}/ --deb=${{ matrix.distro_name }}/main/${{ matrix.goarch }} --recursive=false --flat=true
 
