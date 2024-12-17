@@ -70,13 +70,27 @@ sudo apt update
 sudo apt install --yes zfw-zet
 ```
 
-7. Enable and start the service
+7. Add interfaces to run zfw interception
+   
+``` bash
+sudo vi /opt/openziti/etc/ziti-edge-tunnel.env
+```
+- To provide bi-directional transparency support only add
+```
+ZITI_DIVERTER=<comma separated interface list> e.g. ZITI_DIVERTER="eth0,eth1"
+```
+- To provide full IPv4/V6 firewalling add 
+```
+ZITI_FIREWALL=<comma separated interface list> e.g. ZITI_FIREWALL="eth0,eth1"
+```
+
+8. Enable and start the service
 
 ``` bash
 sudo systemctl enable --now ziti-edge-tunnel.service
 ```
 
-8. Add an Identity.
+9. Add an Identity.
 
 ```
 sudo ziti-edge-tunnel add --jwt "$(< ./in-file.jwt)" --identity myIdentityName
