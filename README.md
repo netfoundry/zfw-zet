@@ -95,3 +95,7 @@ sudo systemctl enable --now ziti-edge-tunnel.service
 ```
 sudo ziti-edge-tunnel add --jwt "$(< ./in-file.jwt)" --identity myIdentityName
 ```
+
+10. Add more user rules.
+
+You can specify user rules and load them into zfw automatically. For more information about user rules, please refer to the [zfw Readme file](https://github.com/netfoundry/zfw?tab=readme-ov-file#load-rules-from-optopenzitibinuseruser_rulessh)
