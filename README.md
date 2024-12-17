@@ -98,6 +98,3 @@ sudo systemctl enable --now ziti-edge-tunnel.service
 sudo ziti-edge-tunnel add --jwt "$(< ./in-file.jwt)" --identity myIdentityName
 ```
 
-10. Add more user rules.
-
-Y
