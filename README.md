@@ -84,7 +84,9 @@ ZITI_DIVERTER=<comma separated interface list> e.g. ZITI_DIVERTER="eth0,eth1"
 ZITI_FIREWALL=<comma separated interface list> e.g. ZITI_FIREWALL="eth0,eth1"
 ```
 
-You can specify user rules and load them into zfw automatically. For more information about user rules, please refer to the [zfw Readme file](https://github.com/netfoundry/zfw?tab=readme-ov-file#load-rules-from-optopenzitibinuseruser_rulessh) **The user rules only got loaded at the start of the ziti-edge-tunnel, any modifications to the file will require a restart of the ziti-edge-tunnel service.**
+You can specify user rules and load them into zfw automatically. For more information about user rules, please refer to the [zfw Readme file](https://github.com/netfoundry/zfw?tab=readme-ov-file#load-rules-from-optopenzitibinuseruser_rulessh) 
+
+**The user rules only got loaded at the start of the ziti-edge-tunnel, any modifications to the file will require a restart of the ziti-edge-tunnel service.**
 
 8. Enable and start the service
 
