@@ -50,7 +50,7 @@ jobs:
 
       - name: Set Deb Predepends
         run: |
-          echo 'Pre-Depends: ziti-edge-tunnel (>= 1.2.7), zfw-router (>= 0.9.4)' >> ${{ steps.deb_dir.outputs.deb_dir }}/DEBIAN/control
+          echo 'Pre-Depends: ziti-edge-tunnel (>= 1.2.10), zfw-router (>= 0.9.7)' >> ${{ steps.deb_dir.outputs.deb_dir }}/DEBIAN/control
           cp -p files/10-run-as-root.conf ${{ steps.deb_dir.outputs.deb_dir }}/etc/systemd/system/ziti-edge-tunnel.service.d
           
       - name: Build Deb package    
@@ -102,7 +102,7 @@ jobs:
 
       - name: Set Deb Predepends
         run: |
-          echo 'Pre-Depends: ziti-edge-tunnel (>= 1.2.9), zfw-router (>= 0.9.6)' >> ${{ steps.deb_dir.outputs.deb_dir }}/DEBIAN/control
+          echo 'Pre-Depends: ziti-edge-tunnel (>= 1.2.10), zfw-router (>= 0.9.7)' >> ${{ steps.deb_dir.outputs.deb_dir }}/DEBIAN/control
           cp -p files/10-run-as-root.conf ${{ steps.deb_dir.outputs.deb_dir }}/etc/systemd/system/ziti-edge-tunnel.service.d
 
       - name: Build deb package    
