@@ -75,6 +75,10 @@ sudo apt install --yes zfw-zet
 ``` bash
 sudo vi /opt/openziti/etc/ziti-edge-tunnel.env
 ```
+- Set ziti-edge-tunnel worker threads to 1
+```
+UV_THREADPOOL_SIZE=1
+```
 - To provide bi-directional transparency support only add
 ```
 ZITI_DIVERTER=<comma separated interface list> e.g. ZITI_DIVERTER="eth0,eth1"
